@@ -1,53 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define ROWS 3
-#define COLS 3
-
+#define COUNT 10 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-void addMatrix(int A[][COLS],int B[][COLS],int C[][COLS]);
-void printMatrix(int A[][COLS]);
+
 int main(int argc, char *argv[]) {
 	
-	int  A[ROWS][COLS]={
-	{2,3,0},
-	{8,9,1},
-	{7,0,5}};
-	int B[ROWS][COLS]={
-	{1,0,0},
-	{0,1,0},
-	{0,0,1}};
-	int C[ROWS][COLS];
+	int data[COUNT];
+	int i,j;
+	int temp; //변수선언하기
 	
-	addMatrix(A,B,C);
-	printMatrix(C);
+	printf("정수 10개를 입력하시오: ");
+	
+	for (i=0;i<COUNT;i++)
+	{
+		scanf("%d",&data[i]);
+	}
+	 
+	 printf("\n\n출력: ");
+	 
+	 for(j=0; j<COUNT; j++)
+   {
+      printf("%d ", data[j]);
+   }
 	
 	return 0;
 }
-void addMatrix(int A[][COLS],int B[][COLS],int C[][COLS])
-{
-	int i,j;
-	for (i=0;i<ROWS;i++){
-	    for(j=0;j<COLS;j++){
-	    	C[i][j]=A[i][j]+B[i][j];
-		}
-	}
 
-	
-	return 1;
-}
-void printMatrix(int A[][COLS])
-{
-	int i,j;
-	for (i=0;i<ROWS;i++){
-	    for(j=0;j<COLS;j++){
-	    	printf("%d", A[i][j]);
-		}
-		printf("\n");
-	}
-	
-	return 1;
-	
-}
 
 
 
